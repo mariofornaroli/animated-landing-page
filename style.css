@@ -36,9 +36,10 @@ header {
     width: 100%;
     z-index: 1;
     transform: translateY(-100px);
-    animation: headerEnter 0.7s linear forwards;
+    animation: headerEnter 0.7s linear forwards; /* AFTER */
 }
 
+/* AFTER */
 @keyframes headerEnter {
     100% {
         transform: translateY(0px);
@@ -47,10 +48,17 @@ header {
 }
 
 .logo {
-    font-size: 1.4rem;
-    letter-spacing: 0.8px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    letter-spacing: 1.5px;
     font-weight: bold;
-    color: #fff;
+}
+
+.logo i {
+    font-size: 2rem;
+    color: var(--main-color);
+    opacity: 0.8;
+    margin-right: 0.2rem;
 }
 
 nav ul {
@@ -72,6 +80,7 @@ nav a:hover {
 nav a.signup {
     border: 1px solid currentColor;
     border-radius: 8px;
+    border-color: var(--main-color);
 }
 
 section.main {
@@ -82,7 +91,7 @@ section.main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 180px 16px;
+    padding: 180px 32px;
 }
 
 section.main::before {
@@ -92,20 +101,23 @@ section.main::before {
     right: 0;
     width: 50%;
     height: 50%;
-    background: radial-gradient(50% 50% at 50% 50%, #eef3d2 0%, var(--body-bk) 100%);
+    /* background: radial-gradient(50% 50% at 50% 50%, #eef3d2 0%, var(--body-bk) 100%); */
+    background: radial-gradient(50% 50% at 50% 50%,
+     #eef3d1, var(--body-bk));
     opacity: 0.14;
 }
 
 .container {
-    max-width: 600px;
+    max-width: 650px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 130px;
+    margin-bottom: 140px;
     transform: scale(0.85);
-    animation: mainAnimation 0.7s linear forwards;
+    animation: mainAnimation 0.7s linear forwards;  /* AFTER */
 }
 
+/* AFTER */
 @keyframes mainAnimation {
     100% {
         transform: scale(1);
@@ -133,19 +145,19 @@ section.main::before {
 
 .title {
     color: #fff;
-    font-size: 50px;
+    font-size: 54px;
     font-style: normal;
     font-weight: 400;
-    margin-top: 1.2rem;
+    margin-top: 1.3rem;
     margin-bottom: 1.5rem;
 }
 
 .subtitle {
     max-width: 550px;
     font-weight: 400;
-    line-height: 1.8rem;
+    line-height: 2rem;
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 .cta {
@@ -180,7 +192,7 @@ section figure {
     overflow: hidden;
     opacity: 0.7;
     transform: perspective(1000px) rotateX(25deg);
-    animation: rotate 0.7s linear forwards;
+    animation: rotate 0.7s linear forwards;  /* AFTER */
 }
 
 section figure img {
@@ -188,6 +200,9 @@ section figure img {
     max-width: 100%;
 }
 
+/* ANIMATIONS */
+
+/* AFTER */
 @keyframes rotate {
     100% {
         transform: perspective(1000px) rotateX(0deg);
